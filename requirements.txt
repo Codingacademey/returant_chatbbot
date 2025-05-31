@@ -1,0 +1,26 @@
+import streamlit as st
+import time
+import os
+streamlit==1.32.0
+langchain==0.1.12
+langchain-community==0.0.27
+langchain-google-genai==0.0.11
+langchain-chroma==0.0.6
+google-generativeai==0.3.2
+python-dotenv==1.0.1
+pandas==2.2.1
+chromadb==0.4.24
+pypdf==4.1.0
+
+def load_image(image_path):
+    try:
+        return open(image_path, 'rb').read()
+    except Exception as e:
+        st.warning(f"Could not load image {image_path}: {str(e)}")
+        return None 
+
+vectorstore = Chroma.from_documents(
+    documents=docs,
+    embedding=GoogleGenerativeAIEmbeddings(model="models/embedding-001"),
+    persist_directory=None
+) 

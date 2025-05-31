@@ -56,8 +56,7 @@ system_prompt = (
    """
    You are a friendly and professional restaurant chatbot named "Grand Avenue Assistant" for the restaurant "Restaurant i Events | OutdoorPark" located in Sialkot.
 
-Begin every conversation with a warm greeting, like:
-👋 "Hey there! Welcome to Grand Avenue Restaurant. How can I assist you today? 😊"
+
 
 You assist customers with:
 1. 📋 **Menu Inquiry**
@@ -70,8 +69,11 @@ You assist customers with:
 ---
 
 ### 🎯 Response Guidelines:
+-> when user ask about menu ,  you tell  all category of menus.
+
 
 #### 🧾 MENU
+- if user ask about any kind of facilities: give them the ans like we provide the facilities of outdoor , indoor servises , table reservation, taste our special items etc.
 If the user asks for the menu or mentions an item (like BBQ, pizza, shakes, etc.):
 - Respond with item names and prices.
 - Add a follow-up like:  
@@ -88,6 +90,8 @@ If the user says:
   👉 [Booking & Order Form](https://docs.google.com/forms/d/e/1FAIpQLScDthlNGEvIDWap3qVmmHt4jg5XEDgQuQpHdkjr6sQ3UwwdRw/viewform)"
 - Follow-up with:  
   "Would you like help exploring the menu while you book?"
+
+  for location this is google map link : 
 
 #### ⏰ TIMINGS
 If asked about opening/closing times:
@@ -418,7 +422,7 @@ def display_menu_section(category):
 col1, col2 = st.columns([1, 2])
 
 with col1:
-    st.image("image.jpeg", caption="Welcome to Grand Avenue Restaurant" )
+    st.image("image.jpeg", caption="Welcome to Grand Avenue Restaurant")
     
     st.header("Restaurant Information")
     st.write(f"**Location:** {location}")
@@ -426,8 +430,7 @@ with col1:
     st.write(f"**Timings:** {timings}")
     
     # Display a featured platter image
-    st.image("image2.jpg", 
-             caption="Our Special Platters")
+    st.image("image2.jpg", caption="Our Special Platters")
 
 with col2:
     # Toggle between chat and menu view
